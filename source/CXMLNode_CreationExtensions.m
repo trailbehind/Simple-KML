@@ -67,14 +67,14 @@ xmlNodePtr theElementNode = xmlNewNode(NULL, (const xmlChar *)[name UTF8String])
 xmlNsPtr theNSNode = xmlNewNs(theElementNode, (const xmlChar *)[URI UTF8String], NULL);
 theElementNode->ns = theNSNode;
 
-CXMLElement *theElement = [[[CXMLElement alloc] initWithLibXMLNode:(xmlNodePtr)theElementNode freeOnDealloc:NO];
+CXMLElement *theElement = [[CXMLElement alloc] initWithLibXMLNode:(xmlNodePtr)theElementNode freeOnDealloc:NO];
 return(theElement);
 }
 
 + (id)elementWithName:(NSString *)name stringValue:(NSString *)string
 {
 xmlNodePtr theElementNode = xmlNewNode(NULL, (const xmlChar *)[name UTF8String]);
-CXMLElement *theElement = [CXMLElement alloc] initWithLibXMLNode:(xmlNodePtr)theElementNode freeOnDealloc:NO];
+CXMLElement *theElement = [[CXMLElement alloc] initWithLibXMLNode:(xmlNodePtr)theElementNode freeOnDealloc:NO];
 theElement.stringValue = string;
 return(theElement);
 }
