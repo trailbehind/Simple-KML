@@ -25,7 +25,7 @@
 - (void) dealloc
 {
 	_prefix, _prefix = nil;
-	_uri release, _uri = nil;
+	_uri, _uri = nil;
 	_parent = nil; // Parent not retained
 	
 }
