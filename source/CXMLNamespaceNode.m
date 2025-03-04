@@ -24,11 +24,10 @@
 
 - (void) dealloc
 {
-	[_prefix release], _prefix = nil;
-	[_uri release], _uri = nil;
+	_prefix, _prefix = nil;
+	_uri release, _uri = nil;
 	_parent = nil; // Parent not retained
 	
-	[super dealloc];
 }
 
 #pragma mark -
