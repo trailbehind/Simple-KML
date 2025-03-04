@@ -43,12 +43,12 @@
 
 - (NSString *)name
 {
-	return _prefix ? [[_prefix copy] autorelease] : @"";
+	return _prefix ? [_prefix copy] : @"";
 }
 
 - (NSString *)stringValue
 {
-	return _uri ? [[_uri copy] autorelease] : @"";
+	return _uri ? [_uri copy] : @"";
 }
 
 - (NSUInteger)index

@@ -40,7 +40,7 @@
 
 + (CTidy *)tidy
 {
-return([[[self alloc] init] autorelease]);
+return([[self alloc] init]);
 }
 
 - (NSData *)tidyData:(NSData *)inData inputFormat:(CTidyFormat)inInputFormat outputFormat:(CTidyFormat)inOutputFormat diagnostics:(NSString **)outDiagnostics error:(NSError **)outError
@@ -126,7 +126,7 @@ tidyBufFree(&theOutputBuffer);
 if (outDiagnostics && theErrorBuffer.bp != NULL)
 	{
 	NSData *theErrorData = [NSData dataWithBytes:theErrorBuffer.bp length:theErrorBuffer.size];
-	*outDiagnostics = [[[NSString alloc] initWithData:theErrorData encoding:NSUTF8StringEncoding] autorelease];
+	*outDiagnostics = [[NSString alloc] initWithData:theErrorData encoding:NSUTF8StringEncoding];
 	}
 tidyBufFree(&theErrorBuffer);
 
@@ -206,13 +206,13 @@ NSMutableData *theOutputBuffer = [NSMutableData dataWithLength:theBufferLength];
 
 theResultCode = tidySaveString(theTidyDocument, [theOutputBuffer mutableBytes], &theBufferLength);
 
-NSString *theString = [[[NSString alloc] initWithData:theOutputBuffer encoding:NSUTF8StringEncoding] autorelease];
+NSString *theString = [[NSString alloc] initWithData:theOutputBuffer encoding:NSUTF8StringEncoding];
 
 // 
 if (outDiagnostics && theErrorBuffer.bp != NULL)
 	{
 	NSData *theErrorData = [NSData dataWithBytes:theErrorBuffer.bp length:theErrorBuffer.size];
-	*outDiagnostics = [[[NSString alloc] initWithData:theErrorData encoding:NSUTF8StringEncoding] autorelease];
+	*outDiagnostics = [[NSString alloc] initWithData:theErrorData encoding:NSUTF8StringEncoding];
 	}
 tidyBufFree(&theErrorBuffer);
 

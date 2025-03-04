@@ -267,7 +267,7 @@ xmlNodeDumpOutput(theOutputBuffer, _node->doc, _node, 0, 0, "utf-8");
 
 xmlOutputBufferFlush(theOutputBuffer);
 
-NSString *theString = [[[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding] autorelease];
+NSString *theString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
 
 xmlOutputBufferClose(theOutputBuffer);
 

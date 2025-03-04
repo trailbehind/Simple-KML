@@ -239,7 +239,7 @@ xmlChar *xmlbuff;
 int buffersize;
 
 xmlDocDumpFormatMemory((xmlDocPtr)(self->_node), &xmlbuff, &buffersize, 1);
-NSString *dump = [[[NSString alloc] initWithBytes:xmlbuff length:buffersize encoding:NSUTF8StringEncoding] autorelease];
+NSString *dump = [[NSString alloc] initWithBytes:xmlbuff length:buffersize encoding:NSUTF8StringEncoding];
 xmlFree(xmlbuff);
 						   
 [result appendString:dump];
